@@ -1,20 +1,11 @@
 package main
 
 import (
-	"fmt"
+	"os"
 
-	"github.com/Lentanta/FantasyScript/lexer"
+	"github.com/Lentanta/FantasyScript/repl"
 )
 
 func main() {
-	code := `
-    let five = 5;
-    let ten = 10;
-    let add = fn(x, y) {
-      x + y;
-    };
-    let result = add(five, ten);
-  `
-	lx := lexer.New(code)
-	fmt.Println(lx)
+	repl.Start(os.Stdin, os.Stdout)
 }
